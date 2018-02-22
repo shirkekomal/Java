@@ -1,0 +1,70 @@
+import java.io.*;
+
+class Parent
+{
+	static void m3()
+	{
+		System.out.println("m3 ");
+	}
+	
+
+	static void m1()
+	{		
+		try
+		{
+			int arr[]=new int[5];  //this false and it will directly goes to catch and skip the following execution;
+				arr[7]=4;			//if this is true then only it will execute following code of ABCD.txt file;
+		
+		try 
+			{
+			File f=new File("ABCD.txt");
+			FileReader fr=new FileReader(f);
+			}
+			
+			catch(FileNotFoundException e)
+			{
+			System.out.println(" File not Found ABCD!!!! ");
+			}
+		
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+			{
+			System.out.println(" ArrayIndexOutOfBoundsException !!! ");
+			}
+		finally
+		{
+			System.out.println(" Finally will always be execute!!!! ");
+		}
+		
+	//	catch(EndOfInputException e)
+		//{
+		//	System.out.println(" EndOfInputException occurs ");	// will not compile;
+		//}
+		
+	
+	}
+	
+	void m2()
+	{
+		System.out.println(" In m2 ");
+	}
+	
+
+	public static void main(String[] s)
+	{	
+		m1();
+		System.out.println("We are in Main()...");
+
+		
+		Parent p=null;
+		
+		//p.m2();		//it will compile but output will show error of NULL Pointer Exception;		
+		try{
+			p.m2();			
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("NullPointerException occurs");
+		}
+	}
+}

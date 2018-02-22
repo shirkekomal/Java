@@ -1,0 +1,34 @@
+abstract class Vehicle
+{
+	abstract void SetCC(int capacity);
+	
+	abstract void SetNoOfWheel(int no);
+	
+}
+
+abstract class Car extends Vehicle
+{
+	void SetNoOfWheel(int no)
+	{
+		System.out.println("SetNoOfWheel invoked: Wheels:"+no);
+	}
+
+}
+
+class BMW extends Car
+{
+	void SetCC(int capacity)
+	{
+		System.out.println("BMW invoked: CC:"+capacity);
+	}
+	
+	public static void main(String[] s)
+	{
+		Vehicle v=new BMW();
+		System.out.println("\n");
+		v.SetCC(2000);
+		v.SetNoOfWheel(4);
+		
+	}
+	
+}

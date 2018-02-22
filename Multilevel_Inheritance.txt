@@ -1,0 +1,90 @@
+class A1
+{
+
+	static
+	{
+		System.out.println("Init Block A");
+	}
+
+	 A1()
+	{
+	System.out.println("A1 Ctor Called");
+	}
+	
+	protected void Saving()
+	{
+		System.out.println("Parent Class Method!!!!!!!!!");
+	}
+
+
+}
+
+
+class B1 extends A1
+{
+	static
+	{
+		System.out.println("Init Block B");
+	}
+
+	 B1()
+	{
+		//super();
+	System.out.println("B1 Ctor Called");
+	}
+	
+	protected void Saving()
+	{
+		System.out.println("B1 Class Method!!!!!!!!!");
+	}
+
+
+}
+
+class C1 extends B1
+{
+	static
+	{
+		System.out.println("Init Block C");
+	}
+
+	 C1()
+	{
+	//super(10);
+	System.out.println("C1 Ctor Called");
+	}
+	
+	protected void Saving()
+	{
+		System.out.println("C1 Class Method!!!!!!!!!");
+	}
+
+
+}
+
+
+class D1 extends C1
+{
+	static
+	{
+		System.out.println("Init Block D");
+	}
+	
+	D1()
+	{
+	//super();
+	System.out.println("D1 Ctor Called");
+	}
+	
+	protected void Saving()
+	{
+		System.out.println("D1 Class Method!!!!!!!!!");
+	}
+
+	
+	
+	public static void main(String[] s)
+	{
+			D1 obj=new D1();
+	}
+}

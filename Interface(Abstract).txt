@@ -1,0 +1,48 @@
+interface Vehicle
+{
+	void SetCC(int capacity);
+	
+	void SetNoOfWheel(int no);
+	
+}
+
+ class Car 
+{
+	Car()
+	{
+		System.out.println("Abstract Car Ctor");
+	}
+	
+	public void SetWheel(int no)
+	{
+		System.out.println("SetNoOfWheel invoked: Wheels:"+no);
+	}
+
+}
+
+class AUDI extends Car implements Vehicle
+{
+	AUDI()
+	{
+		System.out.println("AUDI Ctor called!!!!!!");
+	}
+	
+	public void SetNoOfWheel(int no)
+	{
+		System.out.println("SetNoOfWheel: "+no);
+	}
+	
+	
+	public void SetCC(int capacity)
+	{
+		System.out.println("AUDI invoked: CC:"+capacity);
+	}
+	
+	public static void main(String[] s)
+	{
+		Vehicle v=new AUDI();
+		//System.out.println("\n");
+		v.SetCC(3000);
+		v.SetNoOfWheel(4);
+	}
+}

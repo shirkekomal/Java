@@ -1,0 +1,25 @@
+class StudentHashCode
+{
+	int id=121;
+	int age=21;
+	String name="Vaibhav";
+
+	public int hashCode()    //hashCode is an inbuilt method in JAVA;
+	{
+		int prime=31;
+		int result=0;
+		
+		result=result*prime+name.hashCode(); //name.hashCode() is default syntax for scanning string;
+		result=result*prime+age;
+		result=result*prime+id;
+		
+		return result; //result of hashCode will assign to object and display unique code for that perticular object;
+	}
+	public static void main(String a[])
+	{
+		Stu s = new Stu();   //hashCode automatically gets called by creating object;
+		//int res=s.hashCode();  //no need to call hashCode explicitly;  
+		//System.out.println("Hash Code "+res); 
+		System.out.println(s); 
+	}
+}
